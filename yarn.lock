@@ -15,7 +15,7 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.31.4.tgz#fa5aaeb3e6f3640f6f7625849b724a4d28d662e4"
   integrity sha512-6bBFeDTtPOn4jZaiD3p0f05MEGQL9pw2Zbfj546oFETNmjJFWO3nzHz6/m+P53calknCvyVzZ5YhoBLIvzn5iw==
 
-"@astrojs/compiler@^1.3.1":
+"@astrojs/compiler@^1.1.1", "@astrojs/compiler@^1.3.1":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.3.1.tgz#76930733f6711af0242307da681ca9d278a33df7"
   integrity sha512-xV/3r+Hrfpr4ECfJjRjeaMkJvU73KiOADowHjhkqidfNPVAWPzbqw1KePXuMK1TjzMvoAVE7E163oqfH3lDwSw==
@@ -77,6 +77,15 @@
     is-wsl "^2.2.0"
     undici "^5.20.0"
     which-pm-runs "^1.1.0"
+
+"@astrojs/ts-plugin@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@astrojs/ts-plugin/-/ts-plugin-0.4.4.tgz#6af171a15ddd4821b523cdb894321d4eec1da341"
+  integrity sha512-KlVNAc9K9FEFiRexq00g0kRH9PeS8O8fTlojeD32KCmSbHqZN1kzTc4PBv+OeHzyP866FJeJi7F7Zg0ye+byJQ==
+  dependencies:
+    "@astrojs/compiler" "^1.1.1"
+    "@jridgewell/trace-mapping" "^0.3.15"
+    synckit "^0.8.4"
 
 "@astrojs/webapi@^2.1.0":
   version "2.1.0"
@@ -454,7 +463,7 @@
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz#d7c6e6755c78567a951e04ab52ef0fd26de59f32"
   integrity sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==
 
-"@jridgewell/trace-mapping@^0.3.17", "@jridgewell/trace-mapping@^0.3.9":
+"@jridgewell/trace-mapping@^0.3.15", "@jridgewell/trace-mapping@^0.3.17", "@jridgewell/trace-mapping@^0.3.9":
   version "0.3.18"
   resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.18.tgz#25783b2086daf6ff1dcb53c9249ae480e4dd4cd6"
   integrity sha512-w+niJYzMHdd7USdiH2U6869nqhD2nbfZXND5Yp93qIbEmnDNk7PD48o+YchRVpzMU7M6jVCbenTR7PA1FLQ9pA==
