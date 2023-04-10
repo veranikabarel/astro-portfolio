@@ -5,7 +5,7 @@ export interface LayoutProps {
   title?: string;
 }
 
-const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
+const { title = "John Doe | Web developer" } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
     <title>{title}</title>
   </head>
   <body>
-    <Header/>
+    <Header />
     <slot />
   </body>
 </html>

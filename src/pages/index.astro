@@ -1,11 +1,13 @@
 ---
+import About from "@components/About.astro";
+import Hero from "@components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-const indexTitle = 'John Doe | Web developer'
 ---
 
-<Layout title={indexTitle}>
+<Layout title="Bla">
   <main>
-    <h1>Hello!</h1>
+    <Hero name="John" job="Software developer" city="NY" />
+    <About name="John" />
   </main>
 </Layout>
 
