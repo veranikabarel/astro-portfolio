@@ -1,9 +1,11 @@
 ---
-export interface Props {
+import Header from "@components/Header.astro";
+
+export interface LayoutProps {
   title?: string;
 }
 
-const { title = "Veranika Kasparevych | Web developer" } = Astro.props as Props;
+const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
@@ -23,6 +25,7 @@ const { title = "Veranika Kasparevych | Web developer" } = Astro.props as Props;
     <title>{title}</title>
   </head>
   <body>
+    <Header/>
     <slot />
   </body>
 </html>
