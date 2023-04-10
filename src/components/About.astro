@@ -1,29 +1,52 @@
----
-export interface AboutProps {
-  name?: string;
-}
-
-const { name } = Astro.props as AboutProps;
----
-
-<div>
-  <p>
-    Welcome to my portfolio website! My name is {name}, and I am a web developer
-    with a passion for creating beautiful and functional websites that make a
-    difference in people's lives. I believe that the internet is one of the most
-    powerful tools we have for connecting people and sharing information, and I
-    am dedicated to using my skills to help others harness its potential. <br />
-    As a web developer, I am proficient in a wide range of programming languages
-    and frameworks, including HTML, CSS, JavaScript, React, and Node.js. I am constantly
-    learning and experimenting with new technologies, and I pride myself on staying
-    up-to-date with the latest trends and best practices in web development. Whether
-    you need a simple website for your small business or a complex web application
-    for a large organization, I have the skills and expertise to deliver a high-quality
-    solution that meets your unique needs. I am committed to working closely with
-    my clients to understand their goals and vision, and to providing personalized
-    support and guidance throughout the development process. <br /> Please take some
-    time to explore my portfolio and learn more about the projects I have worked
-    on. If you have any questions or would like to discuss a potential project, please
-    don't hesitate to get in touch!
-  </p>
+<div
+  class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+>
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+  >
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+    >
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <h3
+            class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            About me
+          </h3>
+          <p class="mt-6 text-xl leading-8 text-gray-700">
+            Welcome to my portfolio website! My name is Veranika, and I am a web
+            developer with a passion for creating beautiful and functional
+            websites that make a difference in people's lives. I believe that
+            the internet is one of the most powerful tools we have for
+            connecting people and sharing information, and I am dedicated to
+            using my skills to help others harness its potential. As a web
+            developer, I am proficient in a wide range of programming languages
+            and frameworks, including HTML, CSS, JavaScript, React, and Node.js.
+            I am constantly learning and experimenting with new technologies,
+            and I pride myself on staying up-to-date with the latest trends and
+            best practices in web development. Whether you need a simple website
+            for your small business or a complex web application for a large
+            organization, I have the skills and expertise to deliver a
+            high-quality solution that meets your unique needs. I am committed
+            to working closely with my clients to understand their goals and
+            vision, and to providing personalized support and guidance
+            throughout the development process. Please take some time to explore
+            my portfolio and learn more about the projects I have worked on. If
+            you have any questions or would like to discuss a potential project,
+            please don't hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="-ml-12 -mt-12 p-12 lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+    >
+      <img
+        class="w-[48rem] max-w-none rounded-xl bg-gray-900 sm:w-[57rem]"
+        src=""
+        alt=""
+      />
+    </div>
+  </div>
 </div>
