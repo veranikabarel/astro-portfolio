@@ -1,9 +1,15 @@
-<div class="flex flex-col h-screen justify-center items-center m-4 p-4">
+---
+import Button from "@components/ui/Button.astro";
+---
+
+<div class="flex flex-col h-screen justify-center items-center m-4 md:m-4p-4">
   <div class="text-center flex-row mb-5">
-    <h1>Hi! My name is John Doe and I am a web developer based in New York.</h1>
+    <h1 class="font-monospace text-3xl md:text-5xl text-terracotta">
+      Hi! My name is John Doe and I am a web developer based in New York.
+    </h1>
   </div>
   <div class="flex flex-col md:flex-row">
-    <button class="p-2 m-1 border">Learn more</button>
-    <button class="p-2 m-1 border">Download my CV</button>
+    <Button style={"primary"} size={"md"}>Learn more</Button>
+    <Button style={"primary"} size={"md"}>Download my CV</Button>
   </div>
 </div>

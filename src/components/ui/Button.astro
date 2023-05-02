@@ -1,0 +1,32 @@
+---
+interface Props {
+  size?: "md" | "lg";
+  style?: "outline" | "primary";
+  class?: string;
+}
+
+const {
+  size = "md",
+  style = "primary",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const sizes = {
+  md: "px-5 py-2.5",
+  lg: "px-6 py-3",
+};
+
+const styles = {
+  outline:
+    "m-2 p-2 border-2 border-white text-white bg-terracotta hover:bg-white hover:text-terracotta hover:border-terracotta shadow-lg",
+  primary:
+    "m-2 p-2 text-white bg-terracotta hover:bg-white hover:text-terracotta shadow-lg",
+};
+---
+
+<button
+  {...rest}
+  class:list={["rounded text-center", sizes[size], styles[style], className]}
+  ><slot />
+</button>
