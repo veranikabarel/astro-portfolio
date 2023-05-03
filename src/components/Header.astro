@@ -1,6 +1,58 @@
-<nav class="hidden md:flex justify-center my-2">
-  <a href="#about" class="p-2 m-2">About</a>
-  <a href="#skills" class="p-2 m-2">Skills</a>
-  <a href="#projects" class="p-2 m-2">Projects</a>
-  <a href="#contact" class="p-2 m-2">Contact</a>
+<nav>
+  <div class="p-6 md:hidden">
+    <button
+      class="flex items-center px-3 py-2 border rounded hover:text-white hover:border-white mobile-menu-button"
+    >
+      <svg
+        class="fill-white h-3 w-3"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        ><title>Menu</title><path
+          d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg
+      >
+    </button>
+  </div>
+  <div class="w-full">
+    <div class="hidden md:flex md:justify-center">
+      <a href="#about" class="p-4 hover:text-terracotta"> About</a>
+      <a href="#skills" class="p-4 hover:text-terracotta"> Skills</a>
+      <a href="#projects" class="p-4 hover:text-terracotta"> Projects</a>
+      <a href="#contact" class="p-4 hover:text-terracotta"> Contact</a>
+    </div>
+  </div>
+
+  <div class="hidden mobile-menu">
+    <ul class="p-4">
+      <li>
+        <a href="#about" class="text-sm px-2 py-4 hover:text-terracotta"
+          >About</a
+        >
+      </li>
+      <li>
+        <a href="#skills" class="text-sm px-2 py-4 hover:text-terracotta"
+          >Skills</a
+        >
+      </li>
+      <li>
+        <a href="#projects" class="text-sm px-2 py-4 hover:text-terracotta"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a href="#contact" class="text-sm px-2 py-4 hover:text-terracotta"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
 </nav>
+
+<script>
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+
+  btn &&
+    btn.addEventListener("click", () => {
+      menu && menu.classList.toggle("hidden");
+    });
+</script>
