@@ -15,7 +15,7 @@ const projects = await getCollection('projects', ({ data }) => {
 			projects.map((project) => (
 				<>
 					<a href={project.data.link}>
-						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border p-6 text-center shadow-lg">
+						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border p-6 text-center text-navy shadow-lg dark:text-white">
 							<Picture
 								src={project.data.avatar.src}
 								alt={project.data.avatar.alt}

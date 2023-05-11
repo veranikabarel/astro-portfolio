@@ -10,7 +10,7 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,12 +25,30 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
+		<script>
+			const themeSwitcher = document.getElementById('themeSwitcher');
+			themeSwitcher &&
+				themeSwitcher.addEventListener('click', () => {
+					if (localStorage.theme === 'light') {
+						localStorage.setItem('theme', 'dark');
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+						localStorage.setItem('theme', 'light');
+					}
+				});
+		</script>
 	</head>
 	<body
-		class="mx-auto max-w-screen-xl bg-navy px-5 font-sans text-white xs:text-[16px] md:text-[18px]"
+		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-navy xs:text-[16px] md:text-[18px]"
 	>
 		<Navbar />
 		<slot />
 		<Footer />
+		<style is:global>
+			img {
+				content-visibility: auto;
+			}
+		</style>
 	</body>
 </html>
