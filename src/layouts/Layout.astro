@@ -25,19 +25,6 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
-		<script>
-			const themeSwitcher = document.getElementById('themeSwitcher');
-			themeSwitcher &&
-				themeSwitcher.addEventListener('click', () => {
-					if (localStorage.theme === 'light') {
-						localStorage.setItem('theme', 'dark');
-						document.documentElement.classList.add('dark');
-					} else {
-						document.documentElement.classList.remove('dark');
-						localStorage.setItem('theme', 'light');
-					}
-				});
-		</script>
 	</head>
 	<body
 		class="mx-auto max-w-screen-xl bg-white px-5 font-sans text-white dark:bg-navy xs:text-[16px] md:text-[18px]"
@@ -45,10 +32,6 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 		<Navbar />
 		<slot />
 		<Footer />
-		<style is:global>
-			img {
-				content-visibility: auto;
-			}
-		</style>
 	</body>
 </html>
+<style></style>
