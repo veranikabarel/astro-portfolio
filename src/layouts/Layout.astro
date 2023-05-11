@@ -2,7 +2,7 @@
 import Header from "@components/Header.astro";
 
 export interface LayoutProps {
-  title?: string;
+  title: string;
 }
 
 const { title = "John Doe | Web developer" } = Astro.props as LayoutProps;
@@ -18,13 +18,14 @@ const { title = "John Doe | Web developer" } = Astro.props as LayoutProps;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter&family=Syne&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
   </head>
-  <body class="font-sans text-white bg-navy">
+  <body class="xs:text-[16px] font-sans text-white bg-navy md:text-[18px]">
     <Header />
     <slot />
   </body>
