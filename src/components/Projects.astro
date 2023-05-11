@@ -7,10 +7,7 @@ const projects = await getCollection("projects", ({ data }) => {
 });
 ---
 
-<div
-  id="projects"
-  class="flex flex-col items-center h-screen justify-center p-12"
->
+<div id="projects" class="flex flex-col items-center h-screen justify-center">
   <h3 class="font-monospace text-terracotta text-2xl md:text-4xl">Projects</h3>
   <span class="h-1 w-10 bg-terracotta mb-10"></span>
   <div class="flex flex-col flex-wrap md:flex-row md:justify-around w-full">
@@ -18,7 +15,7 @@ const projects = await getCollection("projects", ({ data }) => {
       projects.map((project) => (
         <>
           <a href={project.data.link}>
-            <div class="flex flex-col mb-10 text-center max-w-sm h-fit rounded overflow-hidden shadow-lg p-6 ">
+            <div class="flex flex-col mb-10 text-center max-w-xs h-fit rounded overflow-hidden border p-6 shadow-lg">
               <Picture
                 src={project.data.avatar.src}
                 alt={project.data.avatar.alt}
@@ -42,4 +39,25 @@ const projects = await getCollection("projects", ({ data }) => {
       ))
     }
   </div>
+  <a
+    href="https://github.com/"
+    target="_blank"
+    rel="noopener"
+    class="flex flex-row hover:text-terracotta"
+  >
+    View full private projects archive
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 ml-1"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+    </svg>
+  </a>
 </div>

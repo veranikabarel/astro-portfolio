@@ -26,7 +26,9 @@ const { title = "John Doe | Web developer" } = Astro.props as LayoutProps;
     />
     <title>{title}</title>
   </head>
-  <body class="xs:text-[16px] font-sans text-white bg-navy md:text-[18px]">
+  <body
+    class="xs:text-[16px] font-sans text-white bg-navy md:text-[18px] max-w-screen-xl mx-auto px-5"
+  >
     <Navbar />
     <slot />
     <Footer />

@@ -1,7 +1,19 @@
 ---
-import Button from "@components/ui/Button.astro";
+import { Icon } from "astro-icon";
 ---
 
-<div id="contact" class="flex flex-col h-screen justify-center items-center">
-  <Button style={"outline"} size={"lg"}>Contact me</Button>
+<div
+  id="contact"
+  class="flex flex-col gap-8 md:flex-row h-screen md:gap-20 items-center justify-center flex-wrap"
+>
+  <h2 class="text-center">Find me at:</h2>
+  <a href="https://github.com/" target="_blank" rel="noopener"
+    ><Icon class="h-8 md:h-12" name="simple-icons:github" /></a
+  >
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener"
+    ><Icon class="h-8 md:h-12" name="simple-icons:linkedin" /></a
+  >
+  <a href="https://twitter.com/" target="_blank" rel="noopener"
+    ><Icon class="h-8 md:h-12" name="simple-icons:twitter" /></a
+  >
 </div>
