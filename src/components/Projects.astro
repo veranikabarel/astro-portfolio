@@ -1,44 +1,45 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects", ({ data }) => {
+  return !data.inProgress;
+});
+---
+
 <div
   id="projects"
-  class="flex flex-col items-center h-screen justify-center m-4 p-4 my-2"
+  class="flex flex-col items-center h-screen justify-center p-12"
 >
   <h3 class="font-monospace text-terracotta text-2xl md:text-4xl">Projects</h3>
+  <span class="h-1 w-10 bg-terracotta mb-10"></span>
+  <div class="flex flex-col flex-wrap md:flex-row md:justify-around w-full">
+    {
+      projects.map((project) => (
+        <>
+          <a href={project.data.link}>
+            <div class="flex flex-col mb-10 text-center max-w-sm h-fit rounded overflow-hidden shadow-lg p-6 ">
+              <Picture
+                src={project.data.avatar.src}
+                alt={project.data.avatar.alt}
+                widths={[100, 300]}
+                aspectRatio="1:1"
+                fit="cover"
+                position="center"
+                class="w-full rounded mb-6"
+              />
+              <div>
+                <h4 class="text-xl font-semibold mb-2">{project.data.title}</h4>
 
-  <div class="flex flex-col text-center md:flex-row justify-around w-full">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="" alt="" />
-      <div class="px-6 py-4">
-        <div class="mb-2">Project name</div>
-        <p class="text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
-        </p>
-      </div>
-    </div>
-
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="" alt="" />
-      <div class="px-6 py-4">
-        <div class="mb-2">Project name</div>
-        <p class="text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
-        </p>
-      </div>
-    </div>
-
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="" alt="" />
-      <div class="px-6 py-4">
-        <div class="mb-2">Project name</div>
-        <p class="text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
-        </p>
-      </div>
-    </div>
+                <div class="flex flex-col gap-3">
+                  <p>{project.data.description}</p>
+                  <p>{project.data.tags}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </>
+      ))
+    }
   </div>
 </div>
