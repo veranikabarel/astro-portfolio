@@ -1,6 +1,6 @@
 ---
-import Header from "@components/Header.astro";
-import Footer from "@components/ui/Footer.astro";
+import Footer from "@components/Footer.astro";
+import Navbar from "@components/Navbar.astro";
 
 export interface LayoutProps {
   title: string;
@@ -27,7 +27,7 @@ const { title = "John Doe | Web developer" } = Astro.props as LayoutProps;
     <title>{title}</title>
   </head>
   <body class="xs:text-[16px] font-sans text-white bg-navy md:text-[18px]">
-    <Header />
+    <Navbar />
     <slot />
     <Footer />
   </body>

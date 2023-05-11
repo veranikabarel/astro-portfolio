@@ -859,6 +859,11 @@ astro-icon@^0.8.0:
     resolve-pkg "^2.0.0"
     svgo "^2.8.0"
 
+astro-navbar@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/astro-navbar/-/astro-navbar-1.2.0.tgz#5f0ea2e72fd99c84ba66e552b5e42fb807823816"
+  integrity sha512-Pq9HTmCvEAUw1zEQlqDc0/wiXEYLjo2gpUDuiZtULDK8VeXpq7XsmRJXU9UjZ4OFJgm6X/QV+rVVbgUWaUeV0w==
+
 astro@^2.3.4:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/astro/-/astro-2.4.4.tgz#8e38e8575a4764e01c8ced13cbfe6379bb3fdfef"

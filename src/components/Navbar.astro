@@ -1,0 +1,50 @@
+---
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "About",
+    path: "#about",
+  },
+  {
+    title: "Skillls",
+    path: "#skills",
+  },
+  {
+    title: "Projects",
+    path: "#projects",
+  },
+  {
+    title: "Contact",
+    path: "#contact",
+  },
+];
+---
+
+<header class="flex flex-col p-4 md:flex-row my-5 justify-center">
+  <Astronav>
+    <div class="flex md:hidden">
+      <MenuIcon class="w-6 h-6" />
+    </div>
+    <MenuItems class="hidden md:flex md:w-auto mt-2">
+      <ul class="flex flex-col md:flex-row md:gap-3">
+        {
+          menuitems.map((item) => (
+            <>
+              {item && (
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex md:px-3 py-2md hover:text-terracotta"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              )}
+            </>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
