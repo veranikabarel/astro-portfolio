@@ -1,6 +1,4 @@
 ---
-import { Picture } from '@astrojs/image/components';
-
 import { getCollection } from 'astro:content';
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
@@ -8,21 +6,17 @@ const projects = await getCollection('projects', ({ data }) => {
 ---
 
 <div id="projects" class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen">
-	<h3 class="font-monospace text-2xl text-terracotta md:text-4xl">Projects</h3>
-	<span class="mb-10 h-1 w-10 bg-terracotta"></span>
-	<div class="flex w-full flex-col flex-wrap items-center md:flex-row md:justify-around">
+	<h3 class="font-monospace text-2xl text-orange md:text-4xl">Projects</h3>
+	<span class="mb-10 h-1 w-10 bg-orange"></span>
+	<div class="flex w-full flex-col flex-wrap items-center md:flex-row md:justify-between">
 		{
 			projects.map((project) => (
 				<>
 					<a href={project.data.link}>
-						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border p-6 text-center text-navy shadow-lg dark:text-white">
-							<Picture
+						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border border-navy p-6 text-center text-navy shadow-lg dark:border-white dark:text-white">
+							<img
 								src={project.data.avatar.src}
 								alt={project.data.avatar.alt}
-								widths={[100, 300]}
-								aspectRatio="1:1"
-								fit="cover"
-								position="center"
 								class="mb-6 w-full rounded"
 							/>
 							<div>
@@ -43,7 +37,7 @@ const projects = await getCollection('projects', ({ data }) => {
 		href="https://github.com/"
 		target="_blank"
 		rel="noopener"
-		class="flex flex-row hover:text-terracotta"
+		class="flex flex-row text-navy hover:text-orange dark:text-white dark:hover:text-orange"
 	>
 		View full private projects archive
 		<svg

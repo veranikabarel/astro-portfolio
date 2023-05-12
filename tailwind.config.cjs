@@ -12,13 +12,20 @@ module.exports = {
 			xl: '1280px',
 		},
 		colors: {
-			terracotta: '#c24332',
-			navy: '#2e303f',
-			green: '#63948c',
-			white: '#ebe6d1',
+			// terracotta: '#c24332',
+			navy: '#19213a',
+			// green: '#63948c',
+			white: '#fff',
+			black: '#000',
+			// Primary colors
+			orange: '#ff9600',
+			birch: 'f3efee',
+			gray: '#d8d8da',
 		},
 		fontFamily: {
-			sans: ['Karla', 'sans-serif'],
+			// Headings
+			sans: ['Montserrat', 'sans-serif'],
+			// Base text
 			monospace: ['Inconsolata', 'monospace'],
 		},
 		fontSize: {
