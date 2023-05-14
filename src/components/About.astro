@@ -1,4 +1,5 @@
 ---
+import { t } from 'i18next';
 ---
 
 <div
@@ -7,7 +8,7 @@
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen md:flex-row"
 >
 	<div class="mb-10 flex w-full flex-col items-center justify-center md:mb-0 md:w-1/2">
-		<h3 class="font-monospace text-2xl text-orange md:text-4xl">About me</h3>
+		<h3 class="font-monospace text-2xl text-orange md:text-4xl">{t('about.title')}</h3>
 		<span class="mb-6 ml-2 h-1 w-10 bg-orange"></span>
 
 		<img />
@@ -15,24 +16,7 @@
 
 	<div class="w-full text-justify text-navy dark:text-white md:w-1/2">
 		<p class="mb-2">
-			Welcome to my portfolio website! My name is John, and I am a web developer with a passion for
-			creating beautiful and functional websites that make a difference in people's lives. I believe
-			that the internet is one of the most powerful tools we have for connecting people and sharing
-			information, and I am dedicated to using my skills to help others harness its potential. As a
-			web developer, I am proficient in a wide range of programming languages and frameworks,
-			including HTML, CSS, JavaScript, React, and Node.js.
-		</p>
-
-		<p>
-			I am constantly learning and experimenting with new technologies, and I pride myself on
-			staying up-to-date with the latest trends and best practices in web development. Whether you
-			need a simple website for your small business or a complex web application for a large
-			organization, I have the skills and expertise to deliver a high-quality solution that meets
-			your unique needs. I am committed to working closely with my clients to understand their goals
-			and vision, and to providing personalized support and guidance throughout the development
-			process. Please take some time to explore my portfolio and learn more about the projects I
-			have worked on. If you have any questions or would like to discuss a potential project, please
-			don't hesitate to get in touch!
+			{t('about.text')}
 		</p>
 	</div>
 </div>

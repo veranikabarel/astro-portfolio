@@ -25,41 +25,27 @@
 </style>
 
 <script>
-	const themeToggle = document.querySelector(
-		'.theme-switch input[type="checkbox"]'
-	) as HTMLInputElement;
-	const currentTheme = localStorage.getItem('theme');
-	if (currentTheme) {
-		document.documentElement.setAttribute('class', currentTheme);
-		if (currentTheme === 'dark') {
-			themeToggle && themeToggle.checked;
-		}
-	}
-
-	function switchTheme(e) {
-		if (e.target.checked) {
-			document.documentElement.setAttribute('class', 'dark');
-			localStorage.setItem('theme', 'dark');
-			document.documentElement.classList.add('scroll-smooth');
-		} else {
-			document.documentElement.removeAttribute('class');
-			localStorage.setItem('theme', 'light');
-			document.documentElement.classList.add('scroll-smooth');
-		}
-	}
-
-	themeToggle.addEventListener('change', switchTheme);
-</script>
-
-<!-- <script> 
 	document.addEventListener('DOMContentLoaded', function ready() {
 		const button = document.querySelector(
 			'.theme-switch input[type="checkbox"]'
 		) as HTMLInputElement;
 
-		button.addEventListener('click', () => {
+		const switchTheme = () => {
 			document.documentElement.classList.toggle('dark');
-			localStorage.setItem('theme', 'dark');
+			if (document.documentElement.classList.contains('dark')) {
+				localStorage.setItem('theme', 'dark');
+			}
+		};
+
+		if (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			switchTheme();
+		}
+
+		button.addEventListener('click', () => {
+			switchTheme();
 		});
 	});
-</script> -->
+</script>

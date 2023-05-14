@@ -1,6 +1,8 @@
 ---
 import Footer from '@components/Footer.astro';
 import Navbar from '@components/Navbar.astro';
+import { HeadHrefLangs } from 'astro-i18next/components';
+import i18next from 'i18next';
 
 export interface LayoutProps {
 	title: string;
@@ -10,16 +12,15 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang={i18next.language} class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<HeadHrefLangs />
 		<title>{title}</title>
 	</head>
 	<body
@@ -28,14 +29,5 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 		<Navbar />
 		<slot />
 		<Footer />
-		<script>
-			window.onpageshow = function () {
-				document.documentElement.classList.add('motion-safe:scroll-smooth');
-				// const elem = document.querySelector('[data-aw-toggle-menu]');
-				// if (elem) {
-				// 	elem.classList.remove('expanded');
-				// }
-			};
-		</script>
 	</body>
 </html>

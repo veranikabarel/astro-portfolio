@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { t } from 'i18next';
 const projects = await getCollection('projects', ({ data }) => {
 	return !data.inProgress;
 });
@@ -10,7 +11,7 @@ const projects = await getCollection('projects', ({ data }) => {
 	id="projects"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
 >
-	<h3 class="font-monospace text-2xl text-orange md:text-4xl">Projects</h3>
+	<h3 class="font-monospace text-2xl text-orange md:text-4xl">{t('projects.title')}</h3>
 	<span class="mb-10 h-1 w-10 bg-orange"></span>
 	<div class="flex w-full flex-col flex-wrap items-center md:flex-row md:justify-between">
 		{
@@ -43,7 +44,7 @@ const projects = await getCollection('projects', ({ data }) => {
 		rel="noopener"
 		class="flex flex-row text-navy hover:text-orange dark:text-white dark:hover:text-orange"
 	>
-		View full private projects archive
+		{t('projects.viewArchive')}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"

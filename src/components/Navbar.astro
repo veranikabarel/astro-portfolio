@@ -1,6 +1,8 @@
 ---
 import Button from '@components/ui/Button.astro';
+import { LanguageSelector } from 'astro-i18next/components';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
+import { t } from 'i18next';
 import Toggle from './ui/ToggleTheme.astro';
 
 const menuitems = [
@@ -47,7 +49,8 @@ const menuitems = [
 	</MenuItems>
 	<div class="flex gap-4">
 		<Button style={'outline'} size={'sm'} class={'flex'}>
-			Download my CV <svg
+			{t('nav.cv')}
+			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
@@ -63,5 +66,6 @@ const menuitems = [
 			</svg>
 		</Button>
 		<Toggle data-testid="toggle-theme-button" />
+		<LanguageSelector showFlag={true} class="my-select-class" />
 	</div>
 </header>
