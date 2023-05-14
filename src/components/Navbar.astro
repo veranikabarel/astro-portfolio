@@ -1,4 +1,5 @@
 ---
+import Button from '@components/ui/Button.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
 import Toggle from './ui/ToggleTheme.astro';
 
@@ -18,13 +19,16 @@ const menuitems = [
 ];
 ---
 
-<header class="flex flex-col p-6 md:flex-row md:justify-between">
+<header
+	data-testid="header"
+	class="flex flex-col p-6 md:flex-row md:items-center md:justify-between"
+>
 	<Astronav>
 		<div class="mb-2 md:hidden">
 			<MenuIcon class="h-6 w-6 text-navy dark:text-white" />
 		</div>
 	</Astronav>
-	<MenuItems class="hidden md:flex">
+	<MenuItems data-testid="menu-items" class="hidden md:flex">
 		<ul class="flex flex-col text-navy dark:text-white md:flex-row md:gap-3">
 			{
 				menuitems.map((item) => (
@@ -41,5 +45,23 @@ const menuitems = [
 			}
 		</ul>
 	</MenuItems>
-	<Toggle />
+	<div class="flex gap-4">
+		<Button style={'outline'} size={'sm'} class={'flex'}>
+			Download my CV <svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="ml-1 h-6 w-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+				></path>
+			</svg>
+		</Button>
+		<Toggle data-testid="toggle-theme-button" />
+	</div>
 </header>
