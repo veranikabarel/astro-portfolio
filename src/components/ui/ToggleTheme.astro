@@ -25,9 +25,9 @@
 </style>
 
 <script>
-	const themeToggle: HTMLInputElement | null = document.querySelector(
+	const themeToggle = document.querySelector(
 		'.theme-switch input[type="checkbox"]'
-	);
+	) as HTMLInputElement;
 	const currentTheme = localStorage.getItem('theme');
 	if (currentTheme) {
 		document.documentElement.setAttribute('class', currentTheme);
@@ -35,14 +35,31 @@
 			themeToggle && themeToggle.checked;
 		}
 	}
+
 	function switchTheme(e) {
 		if (e.target.checked) {
 			document.documentElement.setAttribute('class', 'dark');
 			localStorage.setItem('theme', 'dark');
+			document.documentElement.classList.add('scroll-smooth');
 		} else {
 			document.documentElement.removeAttribute('class');
 			localStorage.setItem('theme', 'light');
+			document.documentElement.classList.add('scroll-smooth');
 		}
 	}
-	themeToggle && themeToggle.addEventListener('change', switchTheme, false);
+
+	themeToggle.addEventListener('change', switchTheme);
 </script>
+
+<!-- <script> 
+	document.addEventListener('DOMContentLoaded', function ready() {
+		const button = document.querySelector(
+			'.theme-switch input[type="checkbox"]'
+		) as HTMLInputElement;
+
+		button.addEventListener('click', () => {
+			document.documentElement.classList.toggle('dark');
+			localStorage.setItem('theme', 'dark');
+		});
+	});
+</script> -->

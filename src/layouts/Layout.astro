@@ -10,7 +10,7 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,6 +28,14 @@ const { title = 'John Doe | Web developer' } = Astro.props as LayoutProps;
 		<Navbar />
 		<slot />
 		<Footer />
+		<script>
+			window.onpageshow = function () {
+				document.documentElement.classList.add('motion-safe:scroll-smooth');
+				// const elem = document.querySelector('[data-aw-toggle-menu]');
+				// if (elem) {
+				// 	elem.classList.remove('expanded');
+				// }
+			};
+		</script>
 	</body>
 </html>
-<style></style>
