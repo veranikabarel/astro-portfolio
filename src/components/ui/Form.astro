@@ -4,36 +4,41 @@ import { t } from 'i18next';
 ---
 
 <div class="mb-10 flex w-full flex-col md:mb-0 md:w-1/3">
-	<h3 class="text-center font-monospace text-2xl text-orange md:text-left md:text-4xl">
-		{t('contact.title')}
-	</h3>
-	<div class="mb-10 mt-8">
-		<div class="grid grid-cols-1 gap-6">
-			<label class="block">
-				<span class="text-navy dark:text-white">{t('contact.fullName')}</span>
-				<input
-					type="text"
-					class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
-					placeholder=""
-				/>
-			</label>
-			<label class="block">
-				<span class="text-navy dark:text-white">{t('contact.email')}</span>
-				<input
-					type="email"
-					class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
-					placeholder="john@example.com"
-				/>
-			</label>
-			<label class="block">
-				<span class="text-navy dark:text-white">{t('contact.message')}</span>
-				<textarea
-					class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
-					rows="3"></textarea>
-			</label>
+	<form method="post" action="/">
+		<h3 class="text-center font-monospace text-2xl text-orange md:text-left md:text-4xl">
+			{t('contact.title')}
+		</h3>
+		<div class="mb-10 mt-8">
+			<div class="grid grid-cols-1 gap-6">
+				<label class="block">
+					<span class="text-navy dark:text-white">{t('contact.fullName')}</span>
+					<input
+						type="text"
+						class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
+						placeholder=""
+						required
+					/>
+				</label>
+				<label class="block">
+					<span class="text-navy dark:text-white">{t('contact.email')}</span>
+					<input
+						type="email"
+						class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
+						placeholder="john@example.com"
+						required
+					/>
+				</label>
+				<label class="block">
+					<span class="text-navy dark:text-white">{t('contact.message')}</span>
+					<textarea
+						class="mt-1 block w-full rounded-md border-navy text-navy focus:border-navy focus:bg-white focus:ring-0"
+						rows="3"
+						required></textarea>
+				</label>
+			</div>
 		</div>
-	</div>
-	<Button style={'primary'} size={'md'} class={'md:w-1/2 self-center md:self-start'}>
-		{t('contact.send')}
-	</Button>
+		<Button style={'primary'} size={'md'} class={'md:w-1/2 self-center md:self-start'}>
+			{t('contact.send')}
+		</Button>
+	</form>
 </div>
