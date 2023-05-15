@@ -16,15 +16,21 @@
 
 ## Features
 
-- ✔️ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
-- ✔️ Uses the following integrations:
-- @astrojs/mdx
-- @astrojs/image
-- @astrojs/tailwind
-- astro-icon
-- astro-seo
-- ✔️ Unit tests ([@Vitest](https://github.com/vitest-dev/vitest)) and e2e ([@Playwright](https://github.com/microsoft/playwright)) are setted up.
-- 🔜 Blog
+✔️ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
+
+✔️ Uses the following integrations:
+  - @astrojs/mdx
+  - @astrojs/image
+  - @astrojs/tailwind
+  - @astro-icon
+  - @astro-seo
+  - @astro-navbar
+
+✔️ Unit tests ([@Vitest](https://github.com/vitest-dev/vitest)) and e2e ([@Playwright](https://github.com/microsoft/playwright)) are setted up.
+
+🔜 Blog with frontmatter (title, description, author, date, image, tags) and RSS feed, sitemap and robots.txt
+
+🔜 404 error page
 
 ## 🚀 Project Structure
 
