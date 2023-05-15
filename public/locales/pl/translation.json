@@ -15,8 +15,6 @@
 	},
 	"projects": {
 		"title": "Projekty",
-		"projectTitle": "Nazwa projektu",
-		"description": "Opis projektu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"viewArchive": "Zobacz wszystkie moje prywatne projekty"
 	},
 	"contact": {

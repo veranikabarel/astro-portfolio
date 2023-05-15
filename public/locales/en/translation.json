@@ -15,8 +15,6 @@
 	},
 	"projects": {
 		"title": "Projects",
-		"projectTitle": "Project title",
-		"description": "Project description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"viewArchive": "View full private projects archive"
 	},
 	"contact": {

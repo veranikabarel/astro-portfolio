@@ -6,7 +6,7 @@ const projects = await getCollection('projects', ({ data }) => {
 });
 ---
 
-<div
+<section
 	data-testid="projects"
 	id="projects"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
@@ -17,20 +17,17 @@ const projects = await getCollection('projects', ({ data }) => {
 		{
 			projects.map((project) => (
 				<>
-					<a href={project.data.link}>
+					<a href={project.data.link} target="_blank" rel="noopener">
 						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border border-navy p-6 text-center text-navy shadow-lg dark:border-white dark:text-white">
-							<img
-								src={project.data.avatar.src}
-								alt={project.data.avatar.alt}
-								class="mb-6 w-full rounded"
-							/>
+							<img src={project.data.img} alt={project.data.img_alt} class="mb-6 w-full rounded" />
 							<div>
 								<h4 class="mb-2 text-xl font-semibold">{project.data.title}</h4>
 
-								<div class="flex flex-col gap-3">
-									<p>{project.data.description}</p>
-									<p>{project.data.tags}</p>
-								</div>
+								<p>
+									{project.data.tags.map((tag) => {
+										<p>{tag}</p>;
+									})}
+								</p>
 							</div>
 						</div>
 					</a>
@@ -59,4 +56,4 @@ const projects = await getCollection('projects', ({ data }) => {
 				d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
 		</svg>
 	</a>
-</div>
+</section>
