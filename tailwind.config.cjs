@@ -2,7 +2,6 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	darkMode: 'class',
-	lightMode: 'class',
 	theme: {
 		screens: {
 			xs: '480px',
@@ -12,15 +11,10 @@ module.exports = {
 			xl: '1280px',
 		},
 		colors: {
-			// terracotta: '#c24332',
-			navy: '#19213a',
-			// green: '#63948c',
+			navy: '#0f172a',
 			white: '#fff',
 			black: '#000',
-			// Primary colors
 			orange: '#ff9600',
-			birch: 'f3efee',
-			gray: '#d8d8da',
 		},
 		fontFamily: {
 			// Headings

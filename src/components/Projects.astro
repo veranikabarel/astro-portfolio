@@ -1,4 +1,5 @@
 ---
+import Card from '@components/ui/Card.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects', ({ data }) => {
@@ -13,22 +14,15 @@ const projects = await getCollection('projects', ({ data }) => {
 >
 	<h3 class="font-monospace text-2xl text-orange md:text-4xl">Projects</h3>
 	<span class="mb-10 h-1 w-10 bg-orange"></span>
-	<div class="flex w-full flex-col flex-wrap items-center md:flex-row md:justify-between">
+	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row md:justify-between">
 		{
 			projects.map((project) => (
-				<>
-					<a href={project.data.link} target="_blank" rel="noopener">
-						<div class="mb-10 flex h-fit max-w-xs flex-col overflow-hidden rounded border border-navy p-6 text-center text-navy shadow-lg dark:border-white dark:text-white">
-							<img src={project.data.img} alt={project.data.img_alt} class="mb-6 w-full rounded" />
-							<div>
-								<h4 class="mb-2 text-xl font-semibold">{project.data.title}</h4>
-								{project.data.tags.map((tag) => (
-									<p class="text-sm">{tag}</p>
-								))}
-							</div>
-						</div>
-					</a>
-				</>
+				<Card
+					url={project.data.link}
+					title={project.data.title}
+					img={project.data.img}
+					tags={project.data.tags}
+				/>
 			))
 		}
 	</div>

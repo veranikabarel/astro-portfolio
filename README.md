@@ -19,12 +19,13 @@
 ✔️ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
 
 ✔️ Uses the following integrations:
-  - @astrojs/mdx
-  - @astrojs/image
-  - @astrojs/tailwind
-  - @astro-icon
-  - @astro-seo
-  - @astro-navbar
+
+- @astrojs/mdx
+- @astrojs/image
+- @astrojs/tailwind
+- @astro-icon
+- @astro-seo
+- @astro-navbar
 
 ✔️ Unit tests ([@Vitest](https://github.com/vitest-dev/vitest)) and e2e ([@Playwright](https://github.com/microsoft/playwright)) are setted up.
 
@@ -32,7 +33,7 @@
 
 🔜 404 error page
 
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -77,7 +78,7 @@ Blog and documentation content are created as collections of Markdown or MDX fil
 
 Any static assets, eg. images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 

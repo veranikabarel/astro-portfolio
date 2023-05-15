@@ -15,12 +15,12 @@ const sizes = {
 
 const styles = {
 	outline:
-		'p-2 border-2 text-orange dark:border-white hover:text-navy hover:border:navy dark:text-white dark:hover:border-orange dark:hover:text-orange shadow-lg',
+		'p-2 border-2 text-orange dark:border-white hover:text-navy hover:border:navy dark:text-white dark:hover:border-orange dark:hover:text-orange',
 	primary:
-		'p-2 border-2 border-white text-white bg-orange hover:bg-white hover:text-orange dark:hover:bg-white dark:hover:text-orange dark:hover:border-2 dark:hover:border-orange hover:text-orange hover:border-orange shadow-lg transition duration-500 hover:scale-100 ',
+		'p-2 border-2 border-white text-white bg-orange hover:bg-white hover:text-orange dark:hover:bg-white dark:hover:text-orange dark:hover:border-2 dark:hover:border-orange hover:text-orange hover:border-orange',
 };
 ---
 
-<button {...rest} class:list={['rounded text-center', sizes[size], styles[style], className]}
+<button {...rest} class:list={['rounded-full text-center', sizes[size], styles[style], className]}
 	><slot />
 </button>
