@@ -1,16 +1,30 @@
-# Astro Starter Kit: Basics
+💫 This is a free template to make your portfolio website using **[Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
 
-```
-npm create astro@latest -- --template basics
-```
+<img src="" alt="Astro Portfolio website screenshot">
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Table of Contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Demo](#demo)
+- [Features](#features)
+- [Project structure](#project-structure)
+- [Commands](#commands)
+- [Contributing](#contributing)
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Demo
+
+📌 [https://astro-fe-portfolio.netlify.app/](https://astro-fe-portfolio.netlify.app/)
+
+## Features
+
+- ✔️ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
+- ✔️ Uses the following integrations:
+- @astrojs/mdx
+- @astrojs/image
+- @astrojs/tailwind
+- astro-icon
+- astro-seo
+- ✔️ Unit tests ([@Vitest](https://github.com/vitest-dev/vitest)) and e2e ([@Playwright](https://github.com/microsoft/playwright)) are setted up.
+- 🔜 Blog
 
 ## 🚀 Project Structure
 
@@ -19,36 +33,59 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   └── favicon.ico
 ├── src/
+│   ├── assets/
+│   │   ├── images/
 │   ├── components/
-│   │   └── Card.astro
+│   │   ├── ui/
+│   │   |   ├── BackToTop.astro
+|   |    |   └── ...
+│   │   ├── About.astro
+│   │   ├── Contact.astro
+|   |     └── ...
+│   ├── content/
+│   │   ├── projects/
+│   │   │   ├── project-1.md
+│   │   │   ├── project-1.md
+│   │   │   └── ...
+│   │   └-- config.ts
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │   ├── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   ├── tests/
+│   │   ├── index.spec.ts
+├── package.json
+├── astro.config.mjs
+└── ...
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro`, `.md` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+`src/components/` is where we put any Astro components and similarly `src/layouts/` for layouts.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Images can be placed in `src/images/`.
+
+Blog and documentation content are created as collections of Markdown or MDX files in `src/content`.
+
+Any static assets, eg. images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+| Command             | Action                                             |
+| :------------------ | :------------------------------------------------- |
+| `yarn`              | Installs dependencies                              |
+| `yarn dev`          | Starts local dev server at `localhost:3000`        |
+| `yarn build`        | Build your production site to `./dist/`            |
+| `yarn preview`      | Preview your build locally, before deploying       |
+| `yarn astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `yarn astro --help` | Get help using the Astro CLI                       |
+| `yarn test`         | Run Vitest tests                                   |
 
-## 👀 Want to learn more?
+## Contributing
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
+That would be very useful for all of us and we would be happy to listen and take action.

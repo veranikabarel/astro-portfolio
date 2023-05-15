@@ -22,12 +22,9 @@ const projects = await getCollection('projects', ({ data }) => {
 							<img src={project.data.img} alt={project.data.img_alt} class="mb-6 w-full rounded" />
 							<div>
 								<h4 class="mb-2 text-xl font-semibold">{project.data.title}</h4>
-
-								<p>
-									{project.data.tags.map((tag) => {
-										<p>{tag}</p>;
-									})}
-								</p>
+								{project.data.tags.map((tag) => (
+									<p class="text-sm">{tag}</p>
+								))}
 							</div>
 						</div>
 					</a>
