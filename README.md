@@ -41,16 +41,16 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 │   └── favicon.ico
+|   ├── hero.png
+|   └── ...
 ├── src/
-│   ├── assets/
-│   │   ├── images/
 │   ├── components/
 │   │   ├── ui/
 │   │   |   ├── BackToTop.astro
-|   |    |   └── ...
+|   |   |   └── ...
 │   │   ├── About.astro
 │   │   ├── Contact.astro
-|   |     └── ...
+|   |   └── ...
 │   ├── content/
 │   │   ├── projects/
 │   │   │   ├── project-1.md

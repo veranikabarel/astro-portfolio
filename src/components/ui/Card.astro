@@ -1,6 +1,5 @@
 ---
 import Tags from '@components/ui/Tags.astro';
-
 interface Props {
 	url?: string;
 	img?: string;
@@ -12,7 +11,7 @@ interface Props {
 
 const {
 	url = '#',
-	img = '/src/assets/images/project.png',
+	img = '',
 	alt = 'Project image',
 	title = 'Project title',
 	tags = ['Tags'],
@@ -20,17 +19,20 @@ const {
 ---
 
 <section class="p-4 md:w-1/2 lg:w-1/3">
-	<div
-		class="h-full overflow-hidden rounded-lg bg-white bg-opacity-40 p-2 shadow-xl dark:border-2 dark:border-white dark:bg-orange dark:bg-opacity-40 dark:bg-none"
+	<article
+		class="rounded-xl bg-white p-3 shadow-lg duration-300 hover:scale-105 hover:transform hover:shadow-xl"
 	>
 		<a href={url}>
-			<img
-				src={img}
-				alt={alt}
-				class="relative h-64 w-full overflow-hidden rounded-lg object-cover object-center"
-			/>
-			<h4 class="text-center text-navy">{title}</h4>
+			<div class="relative flex items-end overflow-hidden rounded-xl">
+				<img
+					src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
+					alt={alt}
+				/>
+			</div>
+			<div class="mt-1 p-2">
+				<h2 class="text-navy">{title}</h2>
+				<Tags tags={tags} />
+			</div>
 		</a>
-		<Tags tags={tags} />
-	</div>
+	</article>
 </section>

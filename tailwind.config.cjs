@@ -11,7 +11,7 @@ module.exports = {
 			xl: '1280px',
 		},
 		colors: {
-			navy: '#0f172a',
+			navy: '#000',
 			white: '#fff',
 			black: '#000',
 			orange: '#ff9600',
