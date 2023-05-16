@@ -12,7 +12,7 @@ interface Props {
 
 const {
 	url = '#',
-	img = '',
+	img = '/src/assets/images/project.png',
 	alt = 'Project image',
 	title = 'Project title',
 	tags = ['Tags'],
@@ -27,7 +27,7 @@ const {
 			<div class="relative flex items-end overflow-hidden rounded-xl">
 				<Image
 					src={img}
-					alt="Computer"
+					alt={alt}
 					aspectRatio="4:4"
 					format="png"
 					width={400}

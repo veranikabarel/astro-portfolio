@@ -23,7 +23,8 @@
 
 <script>
 	let mybutton = document.getElementById('btn-back-to-top') as HTMLButtonElement;
-	window.onscroll = function () {
+	window.onscroll = function (event) {
+		event.preventDefault();
 		scrollFunction();
 	};
 
@@ -36,7 +37,9 @@
 	}
 
 	mybutton.addEventListener('click', backToTop);
-	function backToTop() {
+
+	function backToTop(event) {
+		event.preventDefault();
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	}
