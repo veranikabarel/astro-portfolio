@@ -1,5 +1,6 @@
 ---
 import Button from '@components/ui/Button.astro';
+import ToggleTheme from '@components/ui/ToggleTheme.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
 
 const menuitems = [
@@ -23,7 +24,7 @@ const menuitems = [
 		<div class="flex w-full items-center justify-between lg:w-auto">
 			<Button size={'sm'}>Download CV</Button>
 			<div class="block lg:hidden">
-				<MenuIcon class="h-4 w-4 text-navy" />
+				<MenuIcon class="h-4 w-4 text-black" />
 			</div>
 		</div>
 		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
@@ -32,7 +33,10 @@ const menuitems = [
 					menuitems.map((item) => (
 						<>
 							<li>
-								<a href={item.path} class="hover:text-gray-900 flex py-2 text-navy lg:px-3">
+								<a
+									href={item.path}
+									class="hover:text-gray-900 flex py-2 text-black dark:text-white lg:px-3"
+								>
 									{item.title}
 								</a>
 							</li>
@@ -40,6 +44,7 @@ const menuitems = [
 					))
 				}
 			</ul>
+			<ToggleTheme />
 		</MenuItems>
 	</Astronav>
 </header>

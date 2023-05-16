@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -11,14 +13,13 @@ module.exports = {
 			xl: '1280px',
 		},
 		colors: {
-			navy: '#000',
-			white: '#fff',
 			black: '#000',
-			orange: '#ff9600',
+			white: '#fff',
+			orange: '#E06330',
 		},
 		fontFamily: {
 			// Headings
-			sans: ['Montserrat', 'sans-serif'],
+			sans: ['Inter', 'sans-serif'],
 			// Base text
 			monospace: ['Inconsolata', 'monospace'],
 		},
@@ -34,6 +35,24 @@ module.exports = {
 			'4xl': '2.25rem',
 			'5xl': '3rem',
 		},
+
+		letterSpacing: {
+			tight: '-.05em',
+			normal: '0',
+			wide: '.025em',
+		},
 	},
-	plugins: [require('@tailwindcss/forms')],
+	plugins: [
+		plugin(function ({ addBase, theme }) {
+			addBase({
+				h3: {
+					letterSpacing: theme('letterSpacing.wide'),
+					fontWeight: 'bold',
+				},
+				li: {
+					letterSpacing: theme('letterSpacing.wide'),
+				},
+			});
+		}),
+	],
 };

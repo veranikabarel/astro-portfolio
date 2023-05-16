@@ -1,26 +1,33 @@
 ---
 interface Props {
 	size?: 'sm' | 'md' | 'lg';
-	style?: 'outline' | 'primary';
+	block?: boolean;
+	style?: 'primary';
 	class?: string;
+	[x: string]: any;
 }
 
-const { size = 'md', style = 'primary', class: className, ...rest } = Astro.props;
+const { size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props;
 
 const sizes = {
-	sm: 'px-3 py-1',
+	sm: 'px-4 py-1.5',
 	md: 'px-5 py-2.5',
 	lg: 'px-6 py-3',
 };
 
 const styles = {
-	outline:
-		'p-2 border-2 text-orange dark:border-white hover:text-navy hover:border:navy dark:text-white dark:hover:border-orange dark:hover:text-orange',
-	primary:
-		'p-2 border-2 border-white text-white bg-orange hover:bg-white hover:text-orange dark:hover:bg-white dark:hover:text-orange dark:hover:border-2 dark:hover:border-orange hover:text-orange hover:border-orange',
+	primary: 'bg-black text-white hover:bg-orange  border-2 border-transparent',
 };
 ---
 
-<button {...rest} class:list={['rounded-full text-center', sizes[size], styles[style], className]}
+<button
+	{...rest}
+	class:list={[
+		'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange',
+		block && 'w-full',
+		sizes[size],
+		styles[style],
+		className,
+	]}
 	><slot />
 </button>
