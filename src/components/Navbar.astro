@@ -1,7 +1,6 @@
 ---
 import Button from '@components/ui/Button.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
-import Toggle from './ui/ToggleTheme.astro';
 
 const menuitems = [
 	{
@@ -19,50 +18,28 @@ const menuitems = [
 ];
 ---
 
-<header
-	data-testid="header"
-	class="flex flex-col p-6 md:flex-row md:items-center md:justify-between"
->
+<header class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
-		<div class="mb-2 md:hidden">
-			<MenuIcon class="h-6 w-6 text-navy dark:text-white" />
+		<div class="flex w-full items-center justify-between lg:w-auto">
+			<Button size={'sm'}>Download CV</Button>
+			<div class="block lg:hidden">
+				<MenuIcon class="h-4 w-4 text-navy" />
+			</div>
 		</div>
-	</Astronav>
-	<MenuItems data-testid="menu-items" class="hidden md:flex">
-		<ul class="flex flex-col text-navy dark:text-white md:flex-row md:gap-3">
-			{
-				menuitems.map((item) => (
-					<>
-						{item && (
+		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+			<ul class="flex flex-col lg:flex-row lg:gap-3">
+				{
+					menuitems.map((item) => (
+						<>
 							<li>
-								<a href={item.path} class="py-2md flex hover:text-orange md:px-3">
+								<a href={item.path} class="hover:text-gray-900 flex py-2 text-navy lg:px-3">
 									{item.title}
 								</a>
 							</li>
-						)}
-					</>
-				))
-			}
-		</ul>
-	</MenuItems>
-	<div class="flex gap-4">
-		<Button style={'outline'} size={'sm'} class={'flex'}>
-			Download CV
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="ml-1 h-6 w-6"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-				></path>
-			</svg>
-		</Button>
-		<Toggle data-testid="toggle-theme-button" />
-	</div>
+						</>
+					))
+				}
+			</ul>
+		</MenuItems>
+	</Astronav>
 </header>
