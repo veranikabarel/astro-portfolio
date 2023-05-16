@@ -22,7 +22,7 @@ const menuitems = [
 <header class="my-5 flex flex-col items-center justify-between lg:flex-row">
 	<Astronav>
 		<div class="flex w-full items-center justify-between lg:w-auto">
-			<Button size={'sm'}>Download CV</Button>
+			<Button size={'sm'} name="Download CV">Download CV</Button>
 			<div class="block lg:hidden">
 				<MenuIcon class="h-4 w-4 text-black dark:text-white" />
 			</div>
@@ -34,6 +34,7 @@ const menuitems = [
 						<>
 							<li>
 								<a
+									aria-label="navigation link"
 									href={item.path}
 									class="flex py-2 text-black hover:text-orange dark:text-white dark:hover:text-orange lg:px-3"
 								>
@@ -43,7 +44,7 @@ const menuitems = [
 						</>
 					))
 				}
-				<ToggleTheme />
+				<li><ToggleTheme /></li>
 			</ul>
 		</MenuItems>
 	</Astronav>

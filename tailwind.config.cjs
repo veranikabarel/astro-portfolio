@@ -42,7 +42,7 @@ module.exports = {
 	plugins: [
 		plugin(function ({ addBase, theme }) {
 			addBase({
-				h3: {
+				h2: {
 					letterSpacing: theme('letterSpacing.wide'),
 					fontWeight: 'bold',
 				},

@@ -12,7 +12,7 @@ const projects = await getCollection('projects', ({ data }) => {
 	id="projects"
 	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
 >
-	<h3 class="font-monospace text-2xl text-orange lg:text-4xl">Projects</h3>
+	<h2 class="font-monospace text-2xl text-orange lg:text-4xl">Projects</h2>
 	<span class="mb-10 h-1 w-10 bg-orange"></span>
 	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
@@ -31,6 +31,7 @@ const projects = await getCollection('projects', ({ data }) => {
 		target="_blank"
 		rel="noopener"
 		class="flex flex-row text-black hover:text-orange dark:text-white dark:hover:text-orange"
+		aria-label="link to repository"
 	>
 		View full private projects archive
 		<svg
