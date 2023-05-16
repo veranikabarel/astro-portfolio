@@ -1,25 +1,33 @@
 ---
+import { Picture } from '@astrojs/image/components';
 import Button from '@components/ui/Button.astro';
+import heroImage from 'assets/images/hero.png';
 ---
 
 <section
 	data-testid="hero"
-	class="flex h-screen flex-col-reverse items-center justify-center text-center md:flex-row"
+	class="flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
 >
 	<!-- LEFT COLUMN -->
-	<div class="mb-10 flex flex-col items-center md:mb-0 md:w-1/2">
+	<div class="mb-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
 		<div>
-			<h1 class="mb-10 font-monospace text-3xl text-black dark:text-white md:text-5xl">
+			<h1 class="mb-10 font-monospace text-3xl text-black dark:text-white lg:text-5xl">
 				Hi! My name is <span class="text-orange">Jane Doe</span> and I am a web developer based in New
 				York.
 			</h1>
 		</div>
 		<div class="mb-10">
-			<Button style={'primary'} size={'md'} class={'flex'}>Learn more</Button>
+			<Button style={'primary'} size={'lg'} class={'flex'}>Learn more</Button>
 		</div>
 	</div>
 	<!-- RIGHT COLUMN -->
 	<div class="mb-10 flex w-1/2 items-center justify-center">
-		<img alt="hero image" src="/hero.svg" />
+		<Picture
+			src={heroImage}
+			alt="Coding girl"
+			widths={[200, 400, 600]}
+			aspectRatio="4:4"
+			format="png"
+		/>
 	</div>
 </section>

@@ -9,6 +9,7 @@
 - [Project structure](#project-structure)
 - [Commands](#commands)
 - [Contributing](#contributing)
+- [Credits](#credits)
 
 ## Demo
 
@@ -22,7 +23,7 @@
 
 - @astrojs/mdx
 - @astrojs/image
-- @astrojs/tailwind
+- @astrojs/tailwind - with prettier class sorting plugin
 - @astro-icon
 - @astro-seo
 - @astro-navbar
@@ -44,6 +45,10 @@ Inside of your Astro project, you'll see the following folders and files:
 |   ├── hero.png
 |   └── ...
 ├── src/
+|   ├── assets/
+|   |   ├── images/
+│   │   |   ├── hero.png
+|   |   |   └── ...
 │   ├── components/
 │   │   ├── ui/
 │   │   |   ├── BackToTop.astro
@@ -96,3 +101,7 @@ All commands are run from the root of the project, from a terminal:
 
 If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
 That would be very useful for all of us and we would be happy to listen and take action.
+
+## Credits
+
+Assets designed by (Freepik)[www.freepik.com].

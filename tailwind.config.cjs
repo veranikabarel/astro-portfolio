@@ -35,10 +35,7 @@ module.exports = {
 			'4xl': '2.25rem',
 			'5xl': '3rem',
 		},
-
 		letterSpacing: {
-			tight: '-.05em',
-			normal: '0',
 			wide: '.025em',
 		},
 	},
