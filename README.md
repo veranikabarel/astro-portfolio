@@ -33,7 +33,7 @@
 - @astro-seo
 - @astro-navbar
 
-✔️ Unit tests ([@Vitest](https://github.com/vitest-dev/vitest)) and e2e ([@Playwright](https://github.com/microsoft/playwright)) are setted up.
+✔️([@Playwright](https://github.com/microsoft/playwright)) e2e tests are setted up.
 
 🔜 Blog with frontmatter (title, description, author, date, image, tags) and RSS feed, sitemap and robots.txt
 
@@ -100,7 +100,7 @@ All commands are run from the root of the project, from a terminal:
 | `yarn preview`      | Preview your build locally, before deploying       |
 | `yarn astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `yarn astro --help` | Get help using the Astro CLI                       |
-| `yarn test`         | Run Vitest tests                                   |
+| `yarn test:e2e`     | Run Playwright tests                               |
 
 ## Contributing
 

@@ -8,7 +8,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"test": "vitest"
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.16.7",
@@ -23,10 +23,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.33.0",
-		"happy-dom": "^9.18.3",
 		"prettier": "^2.8.8",
 		"prettier-plugin-astro": "^0.8.0",
-		"prettier-plugin-tailwindcss": "^0.2.8",
-		"vitest": "^0.31.0"
+		"prettier-plugin-tailwindcss": "^0.2.8"
 	}
 }

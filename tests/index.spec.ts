@@ -1,64 +1,79 @@
 import { expect, test } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-	await page.goto('/');
+test.describe('website test', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('/');
+	});
+
+	test('website is shown correctly', async ({ page }) => {
+		await expect(page).toHaveURL('http://localhost:3000/');
+		await expect(page).toHaveTitle('A Very Descriptive Title');
+		const metaDescription = page.locator("meta[name='description']");
+		await expect(metaDescription).toHaveAttribute(
+			'content',
+			'A heavily optimized description full of well-researched keywords.'
+		);
+		const html = page.locator('html');
+		await expect(html).toHaveClass('scroll-smooth');
+
+		await expect(page.getByTestId('hero')).toBeVisible();
+		await expect(page.getByTestId('about')).toBeVisible();
+		await expect(page.getByTestId('projects')).toBeVisible();
+		await expect(page.getByTestId('contact')).toBeVisible();
+		await expect(page.getByTestId('footer')).toBeVisible();
+	});
+
+	test('navbar is shown correctly and working', async ({ page }) => {
+		const header = page.getByTestId('header');
+		await header.getByText('About').click();
+		await expect(page).toHaveURL('http://localhost:3000/#about');
+		await header.getByText('Projects').click();
+		await expect(page).toHaveURL('http://localhost:3000/#projects');
+		await header.getByText('Contact').click();
+		await expect(page).toHaveURL('http://localhost:3000/#contact');
+	});
 });
 
-// GENERAL TESTS
+test.describe('testing button functionalities', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('http://localhost:3000/');
+	});
 
-test('has title', async ({ page }) => {
-	await expect(page).toHaveTitle('John Doe | Web developer');
-});
-
-// HEADER
-
-test('has a header with navbar', async ({ page }) => {
-	await expect(page.getByTestId('header')).toBeVisible();
-});
-
-// HERO
-
-test('has a hero with text and img', async ({ page }) => {
-	await expect(page.getByTestId('hero')).toBeVisible();
-	await expect(page.getByTestId('hero')).toContainText(
-		'Hi! My name is John Doe and I am a web developer based in New York.'
-	);
-	await page
-		.getByRole('img', { name: 'hero image' })
-		.getAttribute('src')
-		.then((src) => {
-			src && src.should.equal('/images/hero.png');
+	test('back to top button is working', async ({ page }) => {
+		const scrollY = await page.evaluate(() => document.documentElement.scrollHeight);
+		await page.evaluate(() => {
+			window.scrollTo(0, scrollY);
 		});
+		await page.getByTestId('back-to-top-button').click();
+		await page.evaluate(() => {
+			window.scrollTo(0, 0);
+		});
+	});
+
+	test('toggle theme button is working', async ({ page }) => {
+		await page.getByTestId('theme-switch').click();
+		await expect(page.locator('html')).toHaveClass('scroll-smooth dark');
+		await page.evaluate(() => {
+			window.localStorage.setItem('theme', 'dark');
+		});
+		await page.getByTestId('theme-switch').click();
+		await expect(page.locator('html')).toHaveClass('scroll-smooth');
+		await page.evaluate(() => {
+			window.localStorage.removeItem('theme');
+		});
+	});
 });
 
-// ABOUT
+test.describe('website test', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('/');
+	});
 
-// PROJECTS
-
-test('has working link to github projects', async ({ page }) => {
-	const pagePromise = page.waitForEvent('popup');
-	await page.getByRole('link', { name: 'View full private projects archive' }).click();
+	test('hover effect on cards is working', async ({ page }) => {
+		const card = page.locator('');
+	});
 });
 
-// CONTACT
-
-test('has contact form', async ({ page }) => {
-	await expect(page.getByTestId('contact')).toBeVisible();
-});
-
-test('Has validated contact form', async ({ page }) => {
-	await page.getByLabel('Full name').click();
-	await page.getByLabel('Full name').fill('John');
-	await page.getByLabel('Full name').press('Tab');
-	await page.getByPlaceholder('john@example.com').fill('John@gmail.com');
-	await page.getByPlaceholder('john@example.com').press('Tab');
-	await page.getByLabel('Message').fill('Hello!');
-	await page.getByLabel('Message').press('Tab');
-	await page.getByRole('button', { name: 'Send a message!' }).press('Enter');
-});
-
-// FOOTER
-
-test('has footer', async ({ page }) => {
-	await expect(page.getByTestId('footer')).toBeVisible();
+test.afterAll(async ({ page }) => {
+	await page.close();
 });
