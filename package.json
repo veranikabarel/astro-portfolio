@@ -8,7 +8,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"test:e2e": "playwright test"
+		"test": "playwright test"
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.16.7",
