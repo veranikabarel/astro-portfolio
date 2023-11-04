@@ -6,11 +6,12 @@ interface Props {
 	url?: string;
 	alt?: string;
 	title?: string;
+	description: string,
 	tags: string[];
 	children?: HTMLElement | HTMLElement[];
 }
 
-const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'] } = Astro.props;
+const { url = '#', alt = 'Project image', description = 'Project Description', title = 'Project title', tags = ['Tags'] } = Astro.props;
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
@@ -32,6 +33,7 @@ const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags
 			</div>
 			<div class="mt-1 p-2">
 				<h3 class="text-xl text-orange lg:text-2xl">{title}</h3>
+				<p class="text-black text-s">{description}</p>
 				<Tags tags={tags} />
 			</div>
 		</a>
