@@ -20,6 +20,7 @@ const projects = await getCollection('projects', ({ data }) => {
 				<Card
 					url={project.data.link}
 					title={project.data.title}
+					description={project.data.description}
 					alt={project.data.img_alt}
 					tags={project.data.tags}
 				/>
