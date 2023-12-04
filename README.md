@@ -1,4 +1,4 @@
-💫 This is a free template to make your portfolio website using **[Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
+💫 This is a make me portfolio website using **[Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
 
 ### Dark mode
 ![Dark mode](https://github.com/veranikabarel/astro-portfolio/assets/48052206/240ab82d-8896-412e-8f52-5cf10d42b1db)
@@ -94,13 +94,13 @@ All commands are run from the root of the project, from a terminal:
 
 | Command             | Action                                             |
 | :------------------ | :------------------------------------------------- |
-| `yarn`              | Installs dependencies                              |
-| `yarn dev`          | Starts local dev server at `localhost:3000`        |
-| `yarn build`        | Build your production site to `./dist/`            |
-| `yarn preview`      | Preview your build locally, before deploying       |
-| `yarn astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `yarn astro --help` | Get help using the Astro CLI                       |
-| `yarn test:e2e`     | Run Playwright tests                               |
+| `pnpm`              | Installs dependencies                              |
+| `pnpm dev`          | Starts local dev server at `localhost:3000`        |
+| `pnpm build`        | Build your production site to `./dist/`            |
+| `pnpm preview`      | Preview your build locally, before deploying       |
+| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `pnpm astro --help` | Get help using the Astro CLI                       |
+| `pnpm test:e2e`     | Run Playwright tests                               |
 
 ## Contributing
 
