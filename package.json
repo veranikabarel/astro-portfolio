@@ -11,11 +11,10 @@
 		"test": "playwright test"
 	},
 	"dependencies": {
-		"@astrojs/image": "^0.18.0",
-		"@astrojs/mdx": "^2.2.2",
+		"@astrojs/mdx": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
-		"@astrojs/ts-plugin": "^1.6.1",
-		"astro": "^4.5.12",
+		"@astrojs/ts-plugin": "^1.8.0",
+		"astro": "^4.10.3",
 		"astro-icon": "^1.1.0",
 		"astro-navbar": "^2.3.1",
 		"astro-seo": "^0.8.3",
@@ -24,7 +23,7 @@
 	"devDependencies": {
 		"@iconify-json/mdi": "^1.1.64",
 		"@playwright/test": "^1.33.0",
-		"prettier": "^3.2.5",
+		"prettier": "^3.3.2",
 		"prettier-plugin-astro": "^0.13.0",
 		"prettier-plugin-tailwindcss": "^0.5.13"
 	}
